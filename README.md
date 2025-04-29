@@ -10,7 +10,7 @@ This is a personal tool I built using Python and Tkinter — with zero prior cod
 - Supports animated GIF previews (if you want to upload your own)
 
 ### 📁 Comes With:
-- ✅ 100 commonly used After Effects expressions
+- ✅ 50+ commonly used After Effects expressions
 - ✅ AE term definitions with syntax and real usage examples
 
 ### 🧠 Why Use It?
@@ -29,7 +29,7 @@ Just place them in the appropriate preview folder (see code comments for more in
 
 ### 🚀 How To Use
 1. Clone or download this repo
-2. Run `ae_Expression_Library.py` using Python 3
+2. Run `ae_Expression_Library.py` using Python 3 or run ae_Expression_Library.exe
 3. Start organizing your expressions like a pro
 
 ```bash
