@@ -1,0 +1,50 @@
+{
+  "wiggle": {
+    "title": "Wiggle",
+    "description": "What is the Wiggle Expression?",
+    "note": "The wiggle() expression in After Effects automatically creates random, organic-looking movement for any property (like position, rotation, scale, etc.) without you having to keyframe it. Its like After Effects saying, *Hey, want this thing to randomly move a bit? I got you.*",
+    "The Basic Syntax": "**wiggle(frequency, amplitude)**",
+    "Parameters": "\n**frequency** = How many times per second the value changes. \n**amplitude** = How much the value changes (the range of movement).",
+    "Example": "So if you write: \nwiggle(2, 50) \nit means: Move this property randomly 2 times per second, by up to 50 units in any direction.\n**Tip:** Control Wiggle with a Slider \n1. Add a Slider Control to your layer (Effects > Expression Controls > Slider Control)\n2. Rename it WiggleAmount. \n3. Connect the Slider and Position using the pick wip: \n*Now you can keyframe the slider and control how much it wiggles over time.*"
+  },
+  "time": {
+    "title": "Time",
+    "description": "What is the time Expression?",
+    "note": "In After Effects, time is a built-in expression that returns the current time (in seconds) of the timeline.\nSo if your playhead is at 5 seconds, time = 5.\nAt 10 seconds? time = 10.\nIt changes automatically as the timeline plays—no keyframes needed.",
+    "The Basic Syntax": "property = time * speed",
+    "Parameters": "\n**time** = Current comp time.\n**speed** = A custom multiplier for controlling the animation rate.",
+    "Example": "rotation = time * 30;\nThis means: *As time goes on, rotate the layer at 30 degrees per second.* So,\nAt 1 second  30\nAt 2 seconds  60\nAt 3 seconds 90 and so on. Smooth, consistent movement."
+  },
+  "value": {
+    "title": "Value",
+    "description": "What is the value Expression?",
+    "note": "In After Effects, value simply means:\n*The current value of this property, including keyframes and manual settings.*\nYou can think of it like the default setting or whatever's already there, unless you tell it to change.\nSo when you use value in an expression, you're saying:\n*Start with the existing value, and then I’ll tweak it if I want.",
+    "The Basic Syntax": "value",
+    "Parameters": "None — it's a keyword, not a function.",
+    "Example": "[value[0], value[1] + 20]\nKeeps the current X position the same, but moves Y down by 20 pixels."
+  },
+  "loopOut": {
+    "title": "loopOut",
+    "description": "What is loopOut()?",
+    "note": "In simple terms, loopOut() tells After Effects:\n*Hey, take the keyframes I already made, and just keep repeating them after the last one.*\nThat’s it. No more copy-pasting keyframes forever. Just one expression - infinite motion.",
+    "The Basic Syntax": "loopOut()",
+    "Parameters": "**Name:** type, **Type:** String, **Description:** \"cycle\", \"pingpong\", \"offset\", \"continue\"\n**Name:** numKeyframes, **Type:** Number, **Description:** Optional – number of keyframes to loop",
+    "Example": "loopOut(\"pingpong\", 2)\nLoops last 2 keyframes, back and forth."
+  },
+  "linear": {
+    "title": "linear",
+    "description": "What is linear()?",
+    "note": "The linear() expression remaps a value from one range to another.\n*If my value is between A and B, change it smoothly to be between C and D.*\n**Why is it useful?** Because sometimes you want one thing to control another — like a slider affecting opacity, or audio amplitude changing scale.",
+    "The Basic Syntax": "linear(inputValue, inputMin, inputMax, outputMin, outputMax)",
+    "Parameters": "\nx - The value youre reading (e.g., from a slider)\nxMin - The minimum expected input value\nxMax - The maximum expected input value\nyMin - The value to output when x = xMin\nyMax - value to output when x = xMax",
+    "Example": "linear(effect(\"Slider Control\")(\"Slider\"), 0, 100, 0, 100)\nWhen the slider is 0, opacity = 0%.\nWhen the slider is 100, opacity = 100%.\nEverything in between is smooth."
+  },
+  "ease": {
+    "title": "ease",
+    "description": "What is ease()?",
+    "note": "Just like linear(), the ease() expression remaps a value from one range to another. BUT, it does it with a natural easing curve — so the change starts slow, speeds up, then slows down again. Thats what makes it feel organic instead of robotic.",
+    "The Basic Syntax": "ease(value, inputMin, inputMax, outputMin, outputMax)",
+    "Parameters": "\nvalue - The value you're checking (e.g., a slider or time)\ninputMin - Start of input range\ninputMax - End of input range\noutputMin - Start of output range\noutputMax - End of output range",
+    "Example": "ease(time, 0, 2, 0, 100)\nFrom 0 to 2 seconds, opacity goes from 0% to 100% — easing in.\nFeels much smoother than:\nlinear(time, 0, 2, 0, 100)"
+  }
+}

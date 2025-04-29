@@ -1,0 +1,11 @@
+
+---
+
+## 📦 Updated `requirements.txt`
+
+Only if you run this on python
+
+```txt
+yt-dlp
+requests
+beautifulsoup4

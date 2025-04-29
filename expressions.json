@@ -1,0 +1,410 @@
+{
+    "expressions": [
+        {
+            "name": "Wiggle - Position",
+            "code": "wiggle(3, 30)",
+            "description": "Makes the object/text move randomly in X and Y directions 3 times per second within 30px range.",
+            "usage": "Apply to Position to get Shaky Cam or Floating Effect",
+            "favorite": false
+        },
+        {
+            "name": "Time - Position",
+            "code": "x = time * 100; y = value[1]; [x, y]",
+            "description": "This moves the layer 100 pixels per second to the right. value[1] keeps the original Y position unchanged.(change the value to modify)",
+            "usage": "You could use this to make an object move forever",
+            "favorite": false
+        },
+        {
+            "name": "Wiggle Only One Axis",
+            "code": "x = wiggle(2, 50)[0];\ny = value[1];\n[x, y]",
+            "description": "Want to wiggle only the X axis of Position? Do this",
+            "usage": "Only X moves randomly; Y stays the same.",
+            "favorite": false
+        },
+        {
+            "name": "Add Bounce Without Breaking Keyframes",
+            "code": "temp = wiggle(3, 20);\n[temp[0], value[1]]",
+            "description": "Adds wiggle to X, keeps your animated Y value intact.",
+            "usage": "Apply this to already keframed y value potition, Keyframes still work, and the extra movement doesn\u00e2\u20ac\u2122t override them\u00e2\u20ac\u201dit adds to them.",
+            "favorite": false
+        },
+        {
+            "name": "Conditionally Change Value",
+            "code": "Conditionally Change Value\nif (time < 3) {\nvalue;\n} else {\n[value[0], value[1] - 100];\n}",
+            "description": "For the first 3 seconds, nothing changes. After that, it moves up 100 pixels on the Y-axis. wiggle",
+            "usage": "apply it to potition",
+            "favorite": false
+        },
+        {
+            "name": "Make a Layer Follow Another",
+            "code": "target = thisComp.layer(\"Null 1\");\n[target.position[0], target.position[1] + 100]",
+            "description": "Follows the target layer\u00e2's position, but always stays 100 pixels below it.",
+            "usage": "Here, value isnt used, but its common to combine value with references like this when modifying existing animations.",
+            "favorite": false
+        },
+        {
+            "name": "Slide In",
+            "code": "x = transform.position[0]; y = transform.position[1]; value + [linear(time, 0, 1, -width, 0), 0]",
+            "description": "Makes an element slide in from the left. Adjust the timing and speed for the desired effect.",
+            "usage": "Apply to position for a sliding effect that animates in from the left side.",
+            "favorite": false
+        },
+        {
+            "name": "Wiggle - Rotation",
+            "code": "wiggle(10, 15)",
+            "description": "A jittery rotation \u00e2 perfect for things like an electric sign flickering or someone shaking from too much coffee.",
+            "usage": "Apply to Rotation. get Vibrating or Twitching Effect",
+            "favorite": false
+        },
+        {
+            "name": "Time - Rotation wiggle",
+            "code": "Time - Rotation\ntime * 45",
+            "description": "Makes your layer spin at 45 degrees per second forever.",
+            "usage": "Spinning logos \nClock hands \nAnimated wheels or gears",
+            "favorite": false
+        },
+        {
+            "name": "Wiggle - Scale",
+            "code": "wiggle(1, 5)",
+            "description": "Creates a gentle pulsing\u00e2 looks great on logos, text, or even characters breathing.",
+            "usage": "Apply to scale, get Bouncy or Breathing Effect",
+            "favorite": false
+        },
+        {
+            "name": "Time - Scale",
+            "code": "scale = [time * 20, time * 20];",
+            "description": "The layer gradually grows bigger over time.\nAt 1 second: 20%,\nAt 2 seconds: 40%,\nAt 5 seconds: 100%, etc.",
+            "usage": "Progressive reveals\nAnimating graphs\nDynamic infographics",
+            "favorite": false
+        },
+        {
+            "name": "Wiggle - Opacity",
+            "code": "wiggle(5, 50)",
+            "description": "Makes the layer's opacity randomly flicker between 0 to 100. Useful for horror vibes or broken lights.",
+            "usage": "Apply to Opacity, Flickering Light or Ghost Effect",
+            "favorite": false
+        },
+        {
+            "name": "Time - Opacity",
+            "code": "Math.sin(time) * 50 + 50",
+            "description": "This makes the opacity oscillate between 0 and 100 smoothly.(change the value to modify)",
+            "usage": "You could use this for blinking effects, pulsing lights, etc.",
+            "favorite": false
+        },
+        {
+            "name": "Opacity with value",
+            "code": "value + random(-10, 10)",
+            "description": "Takes whatever your keyframed opacity is, and adds some flickering noise on top.",
+            "usage": "Fire\nLight bulbs\nHologram effects",
+            "favorite": false
+        },
+        {
+            "name": "Smoother Wiggle",
+            "code": "freq = 1;\namp = 30;\nwiggle(freq, amp, 1, 0.5, time)",
+            "description": "Adds control over randomness smoothness. wiggle(freq, amp, octaves, amp_mult, t)",
+            "usage": "Wiggle Based on Time to Get Smoother Results",
+            "favorite": false
+        },
+        {
+            "name": "Growing Wiggle",
+            "code": "wiggle(time * 2, 10)",
+            "description": "The wiggle gets faster over time. Starts slow, builds up chaos.",
+            "usage": "Useful for simulating energy buildup or tension. add this to potition, Rotation, Scale",
+            "favorite": false
+        },
+        {
+            "name": "Time-based Linear Animation",
+            "code": "linear(time, 0, 5, 0, 100)",
+            "description": "From 0 to 5 seconds, the property animates from 0 to 100.",
+            "usage": "Auto fade-ins\nProgress bars\nLoading animations",
+            "favorite": false
+        },
+        {
+            "name": "Countdown or Progress Text",
+            "code": "time.toFixed(1)",
+            "description": "Shows the current time in seconds with one decimal place, like 3.4, 3.5, etc.",
+            "usage": "add this to **Source Text** to get the count down effect",
+            "favorite": false
+        },
+        {
+            "name": "LoopOut - Default",
+            "code": "loopOut(\"cycle\")",
+            "description": "Loops the animation exactly how it was keyframed. Think of it like replaying a video from the start again and again.",
+            "usage": "Apply it for a animated keyframe to repeat",
+            "favorite": false
+        },
+        {
+            "name": "LoopOut - Pingpong",
+            "code": "loopOut(\"pingpong\")",
+            "description": "Goes forward, then backward, like a boomerang. It reverses the animation at the end and plays it backward before repeating.",
+            "usage": "Apply it for a animated keyframe to repeat back and forth",
+            "favorite": false
+        },
+        {
+            "name": "LoopOut - Offset",
+            "code": "loopOut(\"offset\")",
+            "description": "Each loop adds the difference in values from the first loop. Great for animations that build or travel over time.\nLets say you keyframe position from 0 > 100. Using \"offset\", the next loop goes 100 \u00e2\u2020\u2019 200, then 200 \u00e2\u2020\u2019 300, and so on. Keeps adding.",
+            "usage": "Apply it for a animated keyframe to repeat",
+            "favorite": false
+        },
+        {
+            "name": "Opacity Fade In",
+            "code": "linear(time, 0, 1, 0, 100)",
+            "description": "Fades the opacity of a layer in from 0% to 100%.",
+            "usage": "Apply to the Opacity property to make the layer fade in over time.",
+            "favorite": false
+        },
+        {
+            "name": "Random Rotation",
+            "code": "random(0, 360)",
+            "description": "Generates a random value between 0 and 360.",
+            "usage": "Apply to rotation for random spins.",
+            "favorite": false
+        },
+        {
+            "name": "Expression Delay",
+            "code": "delay = .5; valueAtTime(time - delay)",
+            "description": "Delays an animation by a certain amount of time.",
+            "usage": "Use for staggered animations where each element animates at different times.",
+            "favorite": false
+        },
+        {
+            "name": "Oscillation - Rotation",
+            "code": "amplitude = 50; frequency = 2; decay = 1; amplitude * Math.sin(frequency*time*2*Math.PI)/Math.exp(decay*time)",
+            "description": "Generates oscillating motion, like a sine wave.",
+            "usage": "Apply to position or other properties for oscillating movement.",
+            "favorite": false
+        },
+        {
+            "name": "Text Animation Fade In",
+            "code": "fadeDuration = 1; fadeIn = linear(time, 0, fadeDuration, 0, 100); fadeIn",
+            "description": "Fades text in over a set duration.",
+            "usage": "Apply to opacity, in text layers for smooth fade-in text animation.",
+            "favorite": false
+        },
+        {
+            "name": "Random Position",
+            "code": "random([0, 0], [width, height])",
+            "description": "Randomly positions an object within the bounds of the composition.",
+            "usage": "Apply to position for random placement of layers.",
+            "favorite": false
+        },
+        {
+            "name": "Time Remap",
+            "code": "time * 2",
+            "description": "Displaces time for the animation effect.",
+            "usage": "Apply to the Time Remap property to speed up or slow down animations (Precompose the layer first).",
+            "favorite": false
+        },
+        {
+            "name": "Expression Delay for Multiple Layers",
+            "code": "delay = thisLayer.index * 0.1; valueAtTime(time - delay)",
+            "description": "Creates a staggered animation where each layer starts with a delay.",
+            "usage": "Apply to multiple layers to create a cascading effect.",
+            "favorite": false
+        },
+        {
+            "name": "Random Scale",
+            "code": "random([50, 50], [100, 100])",
+            "description": "Randomizes the scale of an object.",
+            "usage": "Apply to scale for random resizing effects.",
+            "favorite": false
+        },
+        {
+            "name": "Rotation Oscillation",
+            "code": "amplitude = 30; frequency = 2; decay = 1; amplitude * Math.sin(frequency*time*2*Math.PI)/Math.exp(decay*time)",
+            "description": "Oscillates rotation back and forth.",
+            "usage": "Apply to rotation for oscillating movement.",
+            "favorite": false
+        },
+        {
+            "name": "Clockwise Rotation",
+            "code": "time * 30",
+            "description": "Rotates an object clockwise at 30 degrees per second.",
+            "usage": "Apply to rotation for constant clockwise rotation.",
+            "favorite": false
+        },
+        {
+            "name": "Counterclockwise Rotation",
+            "code": "-time * 30",
+            "description": "Rotates an object counterclockwise at 30 degrees per second.",
+            "usage": "Apply to rotation for constant counterclockwise rotation.",
+            "favorite": false
+        },
+        {
+            "name": "Text Random Fade In",
+            "code": "fadeDuration = 1; randomStart = random(0, fadeDuration); fadeIn = linear(time - randomStart, 0, fadeDuration, 0, 100); fadeIn",
+            "description": "Fades in text randomly within a given time range.",
+            "usage": "Apply to text layers to randomize the fade-in effect.",
+            "favorite": false
+        },
+        {
+            "name": "Time Remap - Speed",
+            "code": "time * 2",
+            "description": "Stretches the animation time, effectively speeding up or slowing down the layer.",
+            "usage": "Apply to Time Remap to control the playback speed of an animation.",
+            "favorite": false
+        },
+        {
+            "name": "Change Color",
+            "code": "amt = (Math.sin(time * 2) + 1) / 2;\n\nstartColor = [0.6, 0, 0.9, 1]; // Purple\nendColor   = [0, 1, 0.8, 1];   // Teal\n\nr = linear(amt, 0, 1, startColor[0], endColor[0]);\ng = linear(amt, 0, 1, startColor[1], endColor[1]);\nb = linear(amt, 0, 1, startColor[2], endColor[2]);\n\n[r, g, b, 1]",
+            "description": "Generates a random color value.",
+            "usage": "Apply to color properties like fill or stroke to randomize colors for elements.",
+            "favorite": false
+        },
+        {
+            "name": "Fade Out",
+            "code": "fadeDuration = 1; fadeOut = linear(time, inPoint, inPoint + fadeDuration, 100, 0); fadeOut",
+            "description": "Fades out an element over a given duration.",
+            "usage": "Apply to opacity for a fade-out effect at the start of the layer.",
+            "favorite": false
+        },
+        {
+            "name": "Horizontal Movement",
+            "code": "x = time * 100; value + [x, 0]",
+            "description": "Moves the layer horizontally across the screen.",
+            "usage": "Apply to position to animate an object moving horizontally.",
+            "favorite": false
+        },
+        {
+            "name": "Vertical Movement",
+            "code": "y = time * 100; value + [0, y]",
+            "description": "Moves the layer vertically across the screen.",
+            "usage": "Apply to position to animate an object moving vertically.",
+            "favorite": false
+        },
+        {
+            "name": "Circle Movement",
+            "code": "radius = 200;\nfreq = 2;\n\nx = Math.cos(freq * time * 2 * Math.PI) * radius;\ny = Math.sin(freq * time * 2 * Math.PI) * radius;\n\nvalue + [x, y]",
+            "description": "Animates the object in a circular path.",
+            "usage": "Apply to position for objects to follow a circular motion.",
+            "favorite": false
+        },
+        {
+            "name": "Shape Squeeze",
+            "code": "squeeze = Math.sin(time) * 50; value + [0, squeeze]",
+            "description": "Applies a squeezing effect on a shape layer.",
+            "usage": "Apply to position or scale for a fun squeezing effect.",
+            "favorite": false
+        },
+        {
+            "name": "Flicker",
+            "code": "flicker = random(0, 100); flicker",
+            "description": "Generates a flicker effect by randomly changing opacity or other properties.",
+            "usage": "Apply to opacity for a flickering light effect.",
+            "favorite": false
+        },
+        {
+            "name": "Angle Bounce",
+            "code": "angle = 0; freq = 2; decay = 3; s = Math.sin(freq * time * 2 * Math.PI) / Math.exp(decay * time); angle + s * 30",
+            "description": "Bounces the rotation or angle of an object.",
+            "usage": "Apply to rotation for a bouncing rotation effect.",
+            "favorite": false
+        },
+        {
+            "name": "Zig-Zag Path",
+            "code": "amplitude = 50; frequency = 3; x = amplitude * Math.sin(frequency * time * 2 * Math.PI); value + [x, 0]",
+            "description": "Creates a zig-zag path for an element to follow.",
+            "usage": "Apply to position for a zig-zag motion path.",
+            "favorite": false
+        },
+        {
+            "name": "Random Rotation Bounce",
+            "code": "freq = 4; decay = 2; s = Math.sin(freq * time * 2 * Math.PI) / Math.exp(decay * time); value + s * 30",
+            "description": "Bounces the rotation with random values.",
+            "usage": "Apply to rotation for a bouncy and random rotation effect.",
+            "favorite": false
+        },
+        {
+            "name": "Frame Sync",
+            "code": "frame = Math.floor(time * 30); valueAtTime(frame / 30)",
+            "description": "Synchronizes an animation with the frame rate.",
+            "usage": "Apply to time remapping or other properties for frame-based syncing.",
+            "favorite": false
+        },
+        {
+            "name": "Sine Wave Position",
+            "code": "amplitude = 200; frequency = 1; x = amplitude * Math.sin(frequency * time * 2 * Math.PI); value + [x, 0]",
+            "description": "Moves an object based on a sine wave function.",
+            "usage": "Apply to position for sinusoidal horizontal movement.",
+            "favorite": false
+        },
+        {
+            "name": "Inertia",
+            "code": "decay = 5; s = Math.exp(-decay * time); value * s",
+            "description": "Simulates inertia or damping over time.",
+            "usage": "Apply to scale, position, or rotation to simulate physical damping.",
+            "favorite": false
+        },
+        {
+            "name": "Sinusoidal Rotation",
+            "code": "amplitude = 30; frequency = 1; rotation = amplitude * Math.sin(frequency * time * 2 * Math.PI); rotation",
+            "description": "Creates a smooth sinusoidal rotation effect.",
+            "usage": "Apply to rotation for a continuous smooth oscillation of rotation.",
+            "favorite": false
+        },
+        {
+            "name": "Sinusoidal Opacity",
+            "code": "amplitude = 100; frequency = 1; opacity = amplitude * Math.sin(frequency * time * 2 * Math.PI); opacity",
+            "description": "Oscillates the opacity in a sine wave pattern.",
+            "usage": "Apply to opacity for smooth fading in and out.",
+            "favorite": false
+        },
+        {
+            "name": "Wave Position",
+            "code": "amplitude = 100; frequency = 3; x = amplitude * Math.sin(frequency * time * 2 * Math.PI); value + [x, 0]",
+            "description": "Creates a wave-like motion for position.",
+            "usage": "Apply to position to create a wave motion effect.",
+            "favorite": false
+        },
+        {
+            "name": "Wobble scale",
+            "code": "morph = Math.sin(time * Math.PI) * 20;\n[100 + morph, 100 + morph]",
+            "description": "Makes the layer grow/shrink in a wavy loop",
+            "usage": "Add this to the Scale property",
+            "favorite": false
+        },
+        {
+            "name": "Wobble Position",
+            "code": "morph = Math.sin(time * Math.PI) * 50;\n[value[0], value[1] + morph]",
+            "description": "Keeps X the same (value[0])\nMakes Y go up and down smoothly in a looping wave from -50 to +50 pixels",
+            "usage": "add this to the Position property",
+            "favorite": false
+        },
+        {
+            "name": "Shake rotation side to side",
+            "code": "morph = Math.sin(time * Math.PI * 2) * 15;\nvalue + morph",
+            "description": "Adds a smooth swing to your rotation property",
+            "usage": "add this to rotation property",
+            "favorite": false
+        },
+        {
+            "name": "Bounce",
+            "code": "n = 0;\nif (numKeys > 0)\n{n = nearestKey(time).index;if (key(n).time > time){n--;}}\nif (n == 0) {t = 0;} else {t = time - key(n).time;}\nif (n > 0){v = velocityAtTime(key(n).time - thisComp.frameDuration/10);\namp = 3;\nfreq = 2.0;\ndecay = 3.0;\nvalue + (v/100)*amp*Math.sin(freq*t*2*Math.PI)/Math.exp(decay*t);}else{value;}",
+            "description": "Creates a bounce effect. `freq` controls how often it bounces, and `decay` controls how fast it loses energy.",
+            "usage": "Apply it to the potition keyframe (after animating it to move one side to another or top to down) usefull to make bounce falling Effect",
+            "favorite": true
+        },
+        {
+            "name": "Bounce - 02",
+            "code": "// Customize this to the time your object hits the ground\nlandingTime = 1; // Change to your actual landing time\nfreq = 3;\ndecay = 5;\namplitude = 80;\nt = time - landingTime;\nif (t > 0) {\ns = amplitude * Math.sin(freq * t * 2 * Math.PI) / Math.exp(decay * t);\n} else {\ns = 0;\n}\n[value[0], value[1] - s]",
+            "description": "Creates a bounce effect. `freq` controls how often it bounces, and `decay` controls how fast it loses energy.",
+            "usage": "Apply it to the potition keyframe (after animating it to move one side to another or top to down) usefull to make bounce falling Effect",
+            "favorite": true
+        },
+        {
+            "name": "Map Audio Amplitude to Scale",
+            "code": "delay = 0.05;\namp = thisComp.layer(\"Audio Amplitude\").effect(\"Both Channels\")(\"Slider\").valueAtTime(time - delay);\ns = linear(amp, 0, 20, 100, 150);\n[s, s]",
+            "description": "Audio makes your layer scale up to 150% when it's loud, and back to 100% when it's quiet.",
+            "usage": "Right click on the Audio file > Keyframe Asistant > Convert Audio to Keyframe\nCopy and paste this in the scale property expression field of the object you need to animate",
+            "favorite": false
+        },
+        {
+            "name": "Morph Square \u2192 Octagon (back and forth)",
+            "code": "square = [\n  [50, 0],\n  [100, 0],\n  [100, 50],\n  [100, 100],\n  [50, 100],\n  [0, 100],\n  [0, 50],\n  [0, 0]\n];\n\ncircle = [];\nr = 50;\nfor (i = 0; i < 8; i++) {\n  angle = i * (Math.PI * 2) / 8;\n  circle.push([50 + Math.cos(angle) * r, 50 + Math.sin(angle) * r]);\n}\n\namt = (Math.sin(time * 2 * Math.PI) + 1) / 2; // Smooth loop from 0 \u2192 1 \u2192 0\n\npoints = [];\n\nfor (i = 0; i < square.length; i++) {\n  sx = square[i][0];\n  sy = square[i][1];\n  cx = circle[i][0];\n  cy = circle[i][1];\n\n  x = sx + (cx - sx) * amt;\n  y = sy + (cy - sy) * amt;\n\n  points.push([x, y]);\n}\n\ncreatePath(points, [], [], true);",
+            "description": "A square that smoothly morphs into a Octagon and back, on loop",
+            "usage": "Paste this in the Path expression for a shape layer (in Contents > Shape > Path > Path):",
+            "favorite": false
+        }
+    ]
+}
